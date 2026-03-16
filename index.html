@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mi experiencia escolar</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:#f4efff;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:linear-gradient(90deg,#5a189a,#7b2cbf,#9d4edd);
+padding:15px;
+color:white;
+position:relative;
+}
+
+.logo{
+font-weight:bold;
+font-size:18px;
+}
+
+/* MENÚ */
+
+.menu{
+display:flex;
+gap:25px;
+}
+
+.menu li{
+list-style:none;
+position:relative;
+}
+
+.menu a{
+color:white;
+text-decoration:none;
+padding:8px;
+display:block;
+}
+
+/* SUBMENÚ */
+
+.submenu{
+display:none;
+position:absolute;
+top:35px;
+background:white;
+color:black;
+min-width:160px;
+border-radius:8px;
+box-shadow:0 5px 10px rgba(0,0,0,0.2);
+}
+
+.submenu a{
+color:#333;
+}
+
+.menu li:hover .submenu{
+display:block;
+}
+
+/* HAMBURGUESA */
+
+.hamburguesa{
+display:none;
+font-size:26px;
+cursor:pointer;
+}
+
+/* IMAGEN */
+
+.hero{
+height:350px;
+background-image:url("fondo.jpg");
+background-size:cover;
+background-position:center;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+.menu{
+display:none;
+flex-direction:column;
+background:#7b2cbf;
+position:absolute;
+top:60px;
+left:0;
+width:100%;
+padding:20px;
+}
+
+.menu li{
+width:100%;
+}
+
+.submenu{
+position:static;
+box-shadow:none;
+background:#9d4edd;
+}
+
+.submenu a{
+color:white;
+}
+
+.menu.activo{
+display:flex;
+}
+
+.hamburguesa{
+display:block;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+<div class="logo">Mi experiencia escolar</div>
+
+<div class="hamburguesa" onclick="toggleMenu()">☰</div>
+
+<ul class="menu" id="menu">
+
+<li>
+<a href="#">#1</a>
+<div class="submenu">
+<a href="#">#!.1</a>
+<a href="#">#!.2</a>
+<a href="#">#1.3</a>
+</div>
+</li>
+
+<li>
+<a href="#">#2</a>
+<div class="submenu">
+<a href="#">#2.2</a>
+<a href="#">#2.2</a>
+<a href="#">#2.3</a>
+</div>
+</li>
+
+<li>
+<a href="#">#3</a>
+<div class="submenu">
+<a href="#">#3.1</a>
+<a href="#">#3.2</a>
+<a href="#">#3.3</a>
+</div>
+</li>
+
+<li>
+<a href="#">#4</a>
+<div class="submenu">
+<a href="#">#4.1</a>
+<a href="#">#4.2</a>
+<a href="#">#4.3</a>
+</div>
+</li>
+
+<li>
+<a href="#">#5</a>
+<div class="submenu">
+<a href="#">#5.1</a>
+<a href="#">#5.2</a>
+<a href="#">#5.3</a>
+</div>
+</li>
+
+<li>
+<a href="#">#6</a>
+<div class="submenu">
+<a href="#">#6.1</a>
+<a href="#">#6.2</a>
+<a href="#">#6.3</a>
+</div>
+</li>
+
+</ul>
+
+</div>
+
+<div class="hero"></div>
+
+<script>
+
+function toggleMenu(){
+document.getElementById("menu").classList.toggle("activo");
+}
+
+</script>
+
+</body>
+</html>
