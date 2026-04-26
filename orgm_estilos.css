@@ -1,0 +1,106 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Fondo */
+body {
+  background: #f4f6f9;
+  color: #333;
+}
+
+/* Sección */
+.causas-section {
+  padding: 50px 15px;
+}
+
+/* Contenedor */
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* Título */
+.causas-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+.causas-section h2::after {
+  content: "";
+  width: 50px;
+  height: 4px;
+  background: #6c63ff;
+  display: block;
+  margin: 10px auto;
+  border-radius: 2px;
+}
+
+/* Layout */
+.contenido {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+/* Imagen */
+.imagen {
+  flex: 1;
+  text-align: center;
+}
+
+.imagen img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.imagen img:hover {
+  transform: scale(1.04);
+}
+
+/* Texto */
+.texto {
+  flex: 2;
+}
+
+.texto p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* 📱 Responsive fuerte (celulares) */
+@media (max-width: 768px) {
+  .contenido {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .texto {
+    text-align: justify;
+  }
+
+  .causas-section h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* 📱 Celulares pequeños */
+@media (max-width: 480px) {
+  .causas-section {
+    padding: 40px 10px;
+  }
+
+  .texto p {
+    font-size: 0.95rem;
+  }
+}
