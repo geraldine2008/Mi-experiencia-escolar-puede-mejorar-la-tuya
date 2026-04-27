@@ -12,62 +12,59 @@ body{
 
 /* NAVBAR */
 .navbar{
+  position:relative;
   display:flex;
   align-items:center;
   justify-content:center;
   background:linear-gradient(90deg,#5a189a,#7b2cbf,#9d4edd);
-  padding:15px;
-  position:relative;
-}
-
-/* IMAGEN */
-.img-menu{
-  position:absolute;
-  right:15px;
-  top:5px;
-  height:45px;
-  border-radius:10px;
-  object-fit:cover;
+  padding:15px 20px;
 }
 
 /* MENÚ */
 .menu{
   display:flex;
-  gap:35px;
+  gap:25px; /* ajustado para 6 items */
   list-style:none;
+  padding-right:80px; /* espacio para imagen */
 }
 
 /* LINKS */
 .menu a{
   color:white;
   text-decoration:none;
+  font-size:15px;
   padding:8px 10px;
   border-radius:6px;
   transition:0.3s;
+  white-space:nowrap;
 }
 
 .menu a:hover{
   background:rgba(255,255,255,0.2);
 }
 
-/* SUBMENÚ (ANIMADO) */
+/* SUBMENÚ */
+.menu li{
+  position:relative;
+}
+
 .submenu{
   position:absolute;
-  top:40px;
+  top:38px;
   left:0;
   background:white;
-  min-width:140px;
-  border-radius:10px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.2);
+  min-width:130px;
+  border-radius:8px;
+  box-shadow:0 8px 15px rgba(0,0,0,0.2);
 
   opacity:0;
   transform:translateY(-10px);
   pointer-events:none;
-  transition:all 0.3s ease;
+  transition:all 0.25s ease;
   z-index:10;
 }
 
-/* ACTIVAR ANIMACIÓN */
+/* ANIMACIÓN */
 .menu li:hover .submenu{
   opacity:1;
   transform:translateY(0);
@@ -83,6 +80,15 @@ body{
 
 .submenu a:hover{
   background:#f2f2f2;
+}
+
+/* IMAGEN */
+.img-menu{
+  position:absolute;
+  right:15px;
+  top:8px;
+  height:38px;
+  border-radius:8px;
 }
 
 /* HAMBURGUESA */
@@ -101,8 +107,12 @@ body{
   background:url("fondo.jpg") center/cover;
 }
 
-/* 📱 CELULAR */
+/* 📱 RESPONSIVE */
 @media(max-width:768px){
+
+  .hamburguesa{
+    display:block;
+  }
 
   .menu{
     display:none;
@@ -113,27 +123,24 @@ body{
     left:0;
     width:100%;
     padding:20px;
+    gap:15px;
   }
 
   .menu.activo{
     display:flex;
   }
 
-  .hamburguesa{
-    display:block;
-  }
-
-  /* SUBMENÚ CELULAR */
   .submenu{
     position:static;
-    background:#9d4edd;
-    box-shadow:none;
     opacity:1;
     transform:none;
+    pointer-events:auto;
     display:none;
+    background:#9d4edd;
+    box-shadow:none;
   }
 
-  .submenu.mostrar{
+  .menu li:active .submenu{
     display:block;
   }
 
@@ -143,7 +150,6 @@ body{
   }
 
   .img-menu{
-    height:35px;
-    right:10px;
+    height:30px;
   }
 }
