@@ -10,11 +10,9 @@
 
 <body>
 
-<div class="navbar">
+<header class="navbar">
 
   <div class="hamburguesa" onclick="toggleMenu()">☰</div>
-
-  <img src="pce2.jpg" class="img-menu" alt="Imagen decorativa">
 
   <ul class="menu" id="menu">
 
@@ -45,8 +43,39 @@
       </div>
     </li>
 
+    <li>
+      <a href="#">#4</a>
+      <div class="submenu">
+        <a href="#">#4.1</a>
+        <a href="#">#4.2</a>
+        <a href="#">#4.3</a>
+      </div>
+    </li>
+
+    <li>
+      <a href="#">#5</a>
+      <div class="submenu">
+        <a href="#">#5.1</a>
+        <a href="#">#5.2</a>
+        <a href="#">#5.3</a>
+      </div>
+    </li>
+
+    <li>
+      <a href="#">#6</a>
+      <div class="submenu">
+        <a href="#">#6.1</a>
+        <a href="#">#6.2</a>
+        <a href="#">#6.3</a>
+      </div>
+    </li>
+
   </ul>
-</div>
+
+  <!-- imagen controlada -->
+  <img src="pce2.jpg" class="img-menu" alt="decoración">
+
+</header>
 
 <div class="hero"></div>
 
@@ -54,16 +83,6 @@
 function toggleMenu(){
   document.getElementById("menu").classList.toggle("activo");
 }
-
-/* Submenú con clic en celular */
-document.querySelectorAll(".menu li > a").forEach(link => {
-  link.addEventListener("click", function(e){
-    if(window.innerWidth <= 768){
-      e.preventDefault();
-      this.nextElementSibling.classList.toggle("mostrar");
-    }
-  });
-});
 </script>
 
 </body>
