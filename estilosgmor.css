@@ -1,0 +1,149 @@
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
+
+body{
+  background:#f4efff;
+}
+
+/* NAVBAR */
+.navbar{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(90deg,#5a189a,#7b2cbf,#9d4edd);
+  padding:15px;
+  position:relative;
+}
+
+/* IMAGEN */
+.img-menu{
+  position:absolute;
+  right:15px;
+  top:5px;
+  height:45px;
+  border-radius:10px;
+  object-fit:cover;
+}
+
+/* MENÚ */
+.menu{
+  display:flex;
+  gap:35px;
+  list-style:none;
+}
+
+/* LINKS */
+.menu a{
+  color:white;
+  text-decoration:none;
+  padding:8px 10px;
+  border-radius:6px;
+  transition:0.3s;
+}
+
+.menu a:hover{
+  background:rgba(255,255,255,0.2);
+}
+
+/* SUBMENÚ (ANIMADO) */
+.submenu{
+  position:absolute;
+  top:40px;
+  left:0;
+  background:white;
+  min-width:140px;
+  border-radius:10px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.2);
+
+  opacity:0;
+  transform:translateY(-10px);
+  pointer-events:none;
+  transition:all 0.3s ease;
+  z-index:10;
+}
+
+/* ACTIVAR ANIMACIÓN */
+.menu li:hover .submenu{
+  opacity:1;
+  transform:translateY(0);
+  pointer-events:auto;
+}
+
+/* LINKS SUBMENÚ */
+.submenu a{
+  display:block;
+  padding:10px;
+  color:#333;
+}
+
+.submenu a:hover{
+  background:#f2f2f2;
+}
+
+/* HAMBURGUESA */
+.hamburguesa{
+  display:none;
+  position:absolute;
+  left:15px;
+  font-size:26px;
+  color:white;
+  cursor:pointer;
+}
+
+/* HERO */
+.hero{
+  height:350px;
+  background:url("fondo.jpg") center/cover;
+}
+
+/* 📱 CELULAR */
+@media(max-width:768px){
+
+  .menu{
+    display:none;
+    flex-direction:column;
+    background:#7b2cbf;
+    position:absolute;
+    top:60px;
+    left:0;
+    width:100%;
+    padding:20px;
+  }
+
+  .menu.activo{
+    display:flex;
+  }
+
+  .hamburguesa{
+    display:block;
+  }
+
+  /* SUBMENÚ CELULAR */
+  .submenu{
+    position:static;
+    background:#9d4edd;
+    box-shadow:none;
+    opacity:1;
+    transform:none;
+    display:none;
+  }
+
+  .submenu.mostrar{
+    display:block;
+  }
+
+  .submenu a{
+    color:white;
+    padding-left:20px;
+  }
+
+  .img-menu{
+    height:35px;
+    right:10px;
+  }
+}
