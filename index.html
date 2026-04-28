@@ -22,6 +22,7 @@ justify-content:center;
 background:linear-gradient(90deg,#5a189a,#7b2cbf,#9d4edd);
 padding:15px;
 position:relative;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
 }
 
 /* MENÚ PRINCIPAL */
@@ -79,9 +80,14 @@ cursor:pointer;
 /* HERO */
 .hero{
 height:350px;
-background-image:url("pce2.jpg");
-background-size:cover;
-background-position:center;
+margin-top:20px;
+}
+
+/* IMAGEN RESPONSIVE */
+.portada{
+width:100%;
+height:auto;
+display:block;
 }
 
 /* CELULAR */
@@ -185,14 +191,18 @@ display:block;
 </li>
 
 </ul>
-    <form method="get" action="https://www.google.com/search" target="_blank">
-      <input type="search" name="q" placeholder="Introducir búsqueda" autofocus required>
-      <input type="submit" value="Buscar">
-    </form>
+
+<form method="get" action="https://www.google.com/search" target="_blank">
+<input type="search" name="q" placeholder="Introducir búsqueda" autofocus required>
+<input type="submit" value="Buscar">
+</form>
 
 </div>
 
-<div class="hero"></div>
+<!-- HERO CON IMAGEN -->
+<div class="hero">
+<img src="pce2.jpg" alt="Portada" class="portada">
+</div>
 
 <script>
 function toggleMenu(){
